@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Student implements Comparable<Student>{
+
     private final String name;
     private final int age;
     private final Gender gender;
