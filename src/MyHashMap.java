@@ -12,7 +12,9 @@ public class MyHashMap<K,V> {
         this.array = new LinkedList[10];
     }
 
-    public void add(K k,V v){
+    public void add(Integer k,V v){
+        int hashCode = Integer.valueOf(k).hashCode();
+        array[0]=new LinkedList<>();
         array[0].add(v);
         System.out.println(array[0]);
     }
