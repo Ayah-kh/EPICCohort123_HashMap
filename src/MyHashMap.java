@@ -1,27 +1,31 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class MyHashMap<K,V> {
+public class MyHashMap<K, V> {
+    List<V> list = new LinkedList<>();
     private LinkedList<V>[] array;
-
-
-    List<V> list=new LinkedList<>();
 
 
     public MyHashMap() {
         this.array = new LinkedList[10];
     }
 
-    public void add(Integer k,V v){
-        int hashCode = Integer.valueOf(k).hashCode();
-        array[0]=new LinkedList<>();
-        array[0].add(v);
-        System.out.println(array[0]);
+    public void add(Integer key, V value) {
+        int storeIndex = key / 1000;
+        if (array[storeIndex] == null)
+            array[storeIndex] = new LinkedList<>();
+
+        array[storeIndex].add(value);
+        System.out.println("storeIndex: "+storeIndex+": "+ array[storeIndex]);
+    }
+
+    public V remove(Integer key){
+        int storeIndex = key / 1000;
+        return array[storeIndex].remove();
     }
 
 
-
-    public void test(){
+    public void test() {
 
     }
 }

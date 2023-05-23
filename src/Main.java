@@ -10,12 +10,14 @@ public class Main {
     };
     public static void main(String[] args) {
         MyHashMap<Integer,Student> hashMap=new MyHashMap<>();
-//        hashMap.add(1001,students[0]);
-//        hashMap.add(1001,students[1]);
-//        hashMap.add(1001,students[2]);
-//        hashMap.add(1001,students[1]);
+        hashMap.add(1001,students[0]);
+        hashMap.add(1002,students[1]);
+        hashMap.add(1003,students[2]);
+        hashMap.add(3051,students[1]);
 
-        int hashCode = Integer.valueOf(1002).hashCode();
-        System.out.println("hashCode = " + hashCode);
+        Student student =hashMap.remove(1002);
+        System.out.println("student = " + student);
+
+
     }
 }
